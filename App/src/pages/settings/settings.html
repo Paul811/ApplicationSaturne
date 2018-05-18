@@ -1,0 +1,18 @@
+<!-- Headers permettant d'affichant "Réglages" selon la langue -->
+<ion-header>
+  <ion-navbar>
+    <ion-title><span translate>demo.settings</span></ion-title>
+  </ion-navbar>
+</ion-header>
+
+<!-- Contenu de la page : champs afin de modifier le nom du diffuseur et bouton de validation-->
+<ion-content padding>
+  <form (ngSubmit)="validate()">
+    <ion-item>
+      <ion-label>Nom</ion-label>
+      <ion-input type="text" [(ngModel)]="todo.title" name="title"></ion-input>
+    </ion-item>
+    <button ion-button type="submit" block>Ok</button>
+  </form>
+
+</ion-content>

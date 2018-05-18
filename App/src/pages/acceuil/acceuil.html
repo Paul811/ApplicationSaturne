@@ -1,0 +1,30 @@
+<!-- Page d'acceuil de l'application -->
+
+<!-- Header affichant titre selon la langue -->
+<ion-header>
+
+  <ion-navbar style="text-align:center" hideBackButton color="dark">
+    <ion-title>
+      <span translate>demo.welcome</span>
+    </ion-title>
+  </ion-navbar>
+
+</ion-header>
+
+<!-- Contenu de la page : Bouton permettant d'accéder à la page de connection bluetooth -->
+<!-- => HomePage -->
+<ion-content style="background-color: #2c3e50">
+  <img class="shadowImg" src="img/logo3.png" class="centered" style="opacity: 0.85 ; height: 40vh ; margin-top: 15vw;">
+  <button class="shadowButton" ion-button color="light" icon-start outline round style=" height: 8vh; width:auto; display: block; margin : auto; margin-top: 60vh; font-size: 2.5vh"
+    (tap)='pushHome()'>
+    <ion-icon name="bluetooth"></ion-icon>
+    <span translate>demo.title</span>
+  </button>
+</ion-content>
+
+<!-- Footer permettant de choisir la langue -->
+<ion-footer style="text-align: center">
+  <button ion-button (tap)="changeLanguage('fr')">{{ 'demo.french' | translate }}</button>
+  <button ion-button (tap)="changeLanguage('en')">{{ 'demo.english' | translate }}</button>
+  <button ion-button (tap)="changeLanguage('de')">{{ 'demo.german' | translate }}</button>
+</ion-footer>

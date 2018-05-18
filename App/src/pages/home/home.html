@@ -1,0 +1,44 @@
+<head>
+	<link href="css/animate.css" rel="stylesheet">
+</head>
+
+<!-- Header affichant "Se connecter" selon la langue choisie -->
+<!-- et un bouton afin de revenir à la page précendente     -->
+<ion-header>
+	<ion-navbar hideBackButton color="dark">
+		<ion-buttons left>
+			<button ion-button icon-only end (tap)="popView();">
+				<ion-icon name="arrow-back"></ion-icon>
+			</button>
+		</ion-buttons>
+		<ion-title style="text-align: center">
+			<span translate>demo.connect</span>
+		</ion-title>
+	</ion-navbar>
+</ion-header>
+
+<!-- Contenu de la page : Ensemble des appareils ayant le bluetooth activé       -->
+<!-- 											Bouton permettant de connecter à l'un de ces appareils -->
+<ion-content>
+	<ion-list no-lines style="margin-left: -12px; margin-top: -2px; margin-bottom: 90px;" *ngIf="unpairedDevices.length>0">
+		<ion-list-header style="margin-bottom: 0px; font-size: 1.2em; color : white; background-color: #2c3e50;">
+			<span translate>demo.unknownDevices</span>
+		</ion-list-header>
+		<ion-item *ngFor='let device of unpairedDevices' class="settingsSearch animated bounceInRight">
+			<ion-thumbnail item-start>
+				<img class="shadowImg" src="img/ble.png">
+			</ion-thumbnail>
+			<h1>{{device.name}}</h1>
+			<p style="font-size: smaller">{{device.id}}</p>
+			<button item-end ion-button color="primary" clear style="height: 100%; width: auto;" (tap)='goToPageDevice(device);'>
+				<span translate>demo.toConnect</span>
+			</button>
+		</ion-item>
+	</ion-list>
+</ion-content>
+
+<!-- Bouton permettant de relancer la recherche d'appareils bluetooth-->
+<button class="button button-float" (tap)="discoverUnpairedDevices();">
+	<ion-icon *ngIf="isScanning == false" name="refresh" style="font-size: 30px;"></ion-icon>
+	<ion-spinner *ngIf='isScanning' name="bubbles"></ion-spinner>
+</button>

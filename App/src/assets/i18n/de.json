@@ -1,0 +1,19 @@
+{
+	"demo": {
+		"title": "Mein Parfümdiffusor",
+		"german": "Deutsch",
+		"english": "Englisch",
+		"french": "Französisch",
+		"welcome": "Willkommen",
+		"connect": "Einloggen",
+        "progAvalaible": "Verfügbare Programme",
+        "otherProg": "Andere Programme verfügbar",
+        "knownDevices" : "Bekannte Geräte",
+        "unknownDevices": "Verfügbare Geräte",
+		"addDiffuser": "Fügen Sie einen Diffusor hinzu",
+		"prog": "Programme",
+		"toConnect": "Einloggen",
+		"fragrance": "Parfüm",
+		"settings": "Einstellungen"
+	}
+}

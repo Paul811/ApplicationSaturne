@@ -1,0 +1,42 @@
+<!--
+  Generated template for the ZenPage page.
+
+  See http://ionicframework.com/docs/components/#navigation for more info on
+  Ionic pages and navigation.
+-->
+<ion-header>
+
+  <ion-navbar hideBackButton color="dark">
+    <ion-title>
+      <span translate>demo.prog</span>Zen</ion-title>
+    <ion-buttons left>
+      <button ion-button icon-only end (tap)="popView();">
+        <ion-icon name="arrow-back"></ion-icon>
+      </button>
+    </ion-buttons>
+  </ion-navbar>
+
+</ion-header>
+
+
+<ion-content style="background-color: #2c3e50">
+  <h1 style="color:white; text-align: center; font-size: 30px">Qu'est-ce que le programme Zen ?</h1>
+  <p style="color:white; text-align: center; font-size: 20px; padding: 15px;">
+    Les feuilles de style en cascade1, généralement appelées CSS de l'anglais Cascading Style Sheets, forment un langage informatique
+    qui décrit la présentation des documents HTML et XML. Les standards définissant CSS sont publiés par le World Wide Web
+    Consortium (W3C). Introduit au milieu des années 1990, CSS devient couramment utilisé dans la conception de sites web
+    et bien pris en charge par les navigateurs web dans les années 2000.
+  </p>
+
+  <!--<img src="img/backgroundZen.jpg" style="border-radius: 10px; opacity: 0.75;">-->
+</ion-content>
+<ion-footer style="text-align: center">
+  <ion-toolbar>
+    <button ion-button round outline class="iconPlayPause" [disabled]="!isPlayEnable" (tap)="play()">
+      <ion-icon name="play"></ion-icon>
+    </button>
+    <button ion-button round outline class="iconPlayPause" [disabled]="!isPauseEnable" (tap)="pause()">
+      <ion-icon name="pause"></ion-icon>
+    </button>
+  </ion-toolbar>
+</ion-footer>

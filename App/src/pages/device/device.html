@@ -1,0 +1,56 @@
+<head>
+	<link href="css/animate.css" rel="stylesheet">
+</head>
+
+<!-- Header affichant le nom du diffuseur -->
+<!-- Bouton retour arrière (HomePage) -->
+<!-- Bouton redirection page réglages (SettingsPage) -->
+<ion-header>
+	<ion-navbar hideBackButton color="dark">
+		<ion-title style="text-align: center">{{diffuseur1.getNomDiffuseur()}}</ion-title>
+		<ion-buttons left>
+			<button ion-button icon-only end (tap)="popView();">
+				<ion-icon name="arrow-back"></ion-icon>
+			</button>
+		</ion-buttons>
+		<ion-buttons right>
+			<button ion-button icon-only end (tap)="settings();">
+				<ion-icon name="settings"></ion-icon>
+			</button>
+		</ion-buttons>
+	</ion-navbar>
+</ion-header>
+
+<!-- Contenu de la page :  					 						     -->
+<!-- 		- Nom du parfum dans le diffuseur  							 -->
+<!-- 		- Programmes de diffusion de l'utilisateur 					 -->
+<!-- 		- Autres programmes de diffusion disponible 				 -->
+<!-- 		- Bouton afin d'ajouter de se connecter à un autre diffuseur -->
+<ion-content style="text-align: center">
+	<p style="background-color: rgb(189, 217, 250); width: 100%">
+		<span translate>demo.fragrance</span> : {{diffuseur1.getNomParfum()}}</p>
+	<p translate style=" font-size: 4vh; text-align: center;">demo.progAvalaible</p>
+	<div *ngFor="let prog of diffuseur1.getProgDispo()" style="display:inline">
+		<button ion-button color="light" [disabled]="!prog.isEnable" round [ngClass]="{'animated tada infinite': (active == 1) }"
+		 (tap)='goToPage(prog, diffuseur1.getDevice());' style="width: auto; height: 10vh;  margin-top: 1vh;">
+			{{prog.name}}
+			<img [src]='prog.img' style="height:4vh; margin-left:2vh">
+		</button>
+	</div>
+	<p translate style=" font-size: 4vh; text-align: center;">demo.otherProg</p>
+	<div *ngFor="let prog of diffuseur1.getAutreProgDispo()" style="display:inline">
+		<button ion-button color="light" [disabled]="!prog.isEnable" round (tap)='addProg(prog);' style="width: auto; height: 10vh;  margin-top: 1vh;">
+			{{prog.name}}
+			<img [src]='prog.img' style="height:4vh; margin-left:2vh">
+		</button>
+	</div>
+	<div style="position: fixed; bottom: 0px; width: 95%;">
+		<ion-buttons right>
+			<button class="text-on-bottom" style="background-color: transparent; color:black; box-shadow: none !important" ion-button
+			 icon-only end (tap)="getName();">
+				<ion-icon name="add"></ion-icon>
+				<span translate style="font-size: 10px; padding-top: 3px;">demo.addDiffuser</span>
+			</button>
+		</ion-buttons>
+	</div>
+</ion-content>

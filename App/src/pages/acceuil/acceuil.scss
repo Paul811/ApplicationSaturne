@@ -1,0 +1,17 @@
+
+
+.centered {
+    position: fixed;
+    left: 50%;
+    /* bring your own prefixes */
+    transform: translate(-50%, 0%);
+  }
+
+  .shadowImg{
+    -webkit-filter: drop-shadow(5px 5px 5px #222 );
+    filter: drop-shadow(5px 5px 5px #222);
+  }
+
+  .shadowButton{
+    box-shadow: 5px 8px 15px rgba(0, 0, 0, 0.589);
+  }

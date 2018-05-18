@@ -1,0 +1,19 @@
+{
+	"demo": {
+        "title": "Se connecter à mon diffuseur",
+        "german": "Allemand",
+		"french": "Français",
+        "english": "Anglais",
+        "welcome": "Bienvenue",
+        "connect" : "Se connecter",
+        "progAvalaible": "Programmes disponibles",
+        "otherProg": "Autres programmes disponibles",
+        "knownDevices" : "Appareils connu",
+        "unknownDevices": "Appareils disponibles",
+        "addDiffuser": "Ajouter un diffuseur",
+        "prog": "Programme",
+        "toConnect": "connecter",
+        "fragrance": "Parfum",
+        "settings": "Réglages"
+	}
+}
